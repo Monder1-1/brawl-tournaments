@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0b1020">
+
+    <title>BRAWL TOURNAMENTS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     APP
+===================================================== -->
+
+<div id="app">
+
+    <!-- =================================================
+         MOBILE TOPBAR
+    ================================================== -->
+
+    <header class="mobile-topbar">
+
+        <button
+            class="icon-btn"
+            id="mobileMenuBtn"
+            aria-label="فتح القائمة">
+            ☰
+        </button>
+
+        <div class="mobile-brand">
+            <div class="brand-logo">🏆</div>
+
+            <div>
+                <strong>BRAWL</strong>
+                <span>TOURNAMENTS</span>
+            </div>
+        </div>
+
+        <button
+            class="icon-btn"
+            id="mobileMoreBtn"
+            aria-label="المزيد">
+            ⋮
+        </button>
+
+    </header>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo large">
+                🏆
+            </div>
+
+            <div class="brand-text">
+                <strong>BRAWL</strong>
+                <span>TOURNAMENTS</span>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-label">
+            MENU
+        </div>
+
+
+        <nav class="main-nav">
+
+            <button
+                class="nav-item active"
+                data-page="dashboard">
+
+                <span class="nav-icon">⌂</span>
+
+                <span>الرئيسية</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="league">
+
+                <span class="nav-icon">🏆</span>
+
+                <span>الدوري</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="groups">
+
+                <span class="nav-icon">👥</span>
+
+                <span>دوري المجموعات</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="knockout">
+
+                <span class="nav-icon">⚔️</span>
+
+                <span>الأدوار الإقصائية</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="teams">
+
+                <span class="nav-icon">👤</span>
+
+                <span>الفرق</span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="history">
+
+                <span class="nav-icon">📋</span>
+
+                <span>السجل</span>
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-spacer"></div>
+
+
+        <div class="sidebar-footer">
+
+            <div class="mini-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>TOURNAMENT PRO</strong>
+                    <small>جاهز للبطولة</small>
+                </div>
+
+            </div>
+
+
+            <button
+                class="reset-app-btn"
+                id="resetAppBtn">
+
+                ↻
+                <span>إعادة ضبط التطبيق</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section
+            class="page active"
+            id="page-dashboard">
+
+
+            <div class="dashboard-hero">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span>⚡</span>
+                        BRAWL TOURNAMENTS
+                    </div>
+
+                    <h1>
+                        اصنع بطولتك<br>
+                        <span>بطريقة احترافية.</span>
+                    </h1>
+
+                    <p>
+                        أنشئ دوري، مجموعات أو أدوار إقصائية،
+                        نظم الفرق والنتائج والقرعة من مكان واحد.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <button
+                            class="primary-btn"
+                            data-page="league">
+
+                            🏆 إنشاء بطولة
+
+                        </button>
+
+
+                        <button
+                            class="ghost-btn"
+                            data-page="teams">
+
+                            👥 إدارة الفرق
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="hero-glow"></div>
+
+                    <div class="trophy-ring">
+
+                        <div class="trophy">
+                            🏆
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card card-one">
+                        🎲 قرعة عشوائية
+                    </div>
+
+                    <div class="floating-card card-two">
+                        ⚔️ Knockout
+                    </div>
+
+                    <div class="floating-card card-three">
+                        ⭐ ترتيب مباشر
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="dashboard-stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        👥
+                    </div>
+
+                    <div>
+                        <span>إجمالي الفرق</span>
+                        <strong id="statTeams">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon yellow">
+                        🏆
+                    </div>
+
+                    <div>
+                        <span>البطولات</span>
+                        <strong id="statTournaments">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        🎮
+                    </div>
+
+                    <div>
+                        <span>المباريات</span>
+                        <strong id="statMatches">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        🎲
+                    </div>
+
+                    <div>
+                        <span>القرعات</span>
+                        <strong id="statDraws">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MODES -->
+
+            <div class="section-heading">
+
+                <div>
+                    <span>TOURNAMENT MODES</span>
+                    <h2>اختر نظام البطولة</h2>
+                </div>
+
+            </div>
+
+
+            <div class="mode-grid">
+
+
+                <button
+                    class="mode-card mode-league"
+                    data-page="league">
+
+                    <div class="mode-card-top">
+
+                        <div class="mode-icon">
+                            ⚽
+                        </div>
+
+                        <span class="mode-arrow">
+                            ←
+                        </span>
+
+                    </div>
+
+                    <h3>الدوري</h3>
+
+                    <p>
+                        جميع الفرق تلعب ضد بعضها،
+                        مع جدول ترتيب ونقاط ونتائج تلقائية.
+                    </p>
+
+                    <div class="mode-tags">
+
+                        <span>3 نقاط</span>
+                        <span>ترتيب</span>
+                        <span>جولات</span>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="mode-card mode-groups"
+                    data-page="groups">
+
+                    <div class="mode-card-top">
+
+                        <div class="mode-icon">
+                            👥
+                        </div>
+
+                        <span class="mode-arrow">
+                            ←
+                        </span>
+
+                    </div>
+
+                    <h3>دوري المجموعات</h3>
+
+                    <p>
+                        وزّع الفرق بالقرعة على مجموعات
+                        وحدد المتأهلين للمرحلة التالية.
+                    </p>
+
+                    <div class="mode-tags">
+
+                        <span>قرعة</span>
+                        <span>مجموعات</span>
+                        <span>تأهل</span>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="mode-card mode-knockout"
+                    data-page="knockout">
+
+                    <div class="mode-card-top">
+
+                        <div class="mode-icon">
+                            ⚔️
+                        </div>
+
+                        <span class="mode-arrow">
+                            ←
+                        </span>
+
+                    </div>
+
+                    <h3>الأدوار الإقصائية</h3>
+
+                    <p>
+                        قرعة خروج المغلوب من دور الـ32
+                        حتى النهائي وتتويج البطل.
+                    </p>
+
+                    <div class="mode-tags">
+
+                        <span>Knockout</span>
+                        <span>Bracket</span>
+                        <span>Final</span>
+
+                    </div>
+
+                </button>
+
+
+            </div>
+
+
+            <!-- RECENT -->
+
+            <div class="section-heading recent-heading">
+
+                <div>
+                    <span>RECENT ACTIVITY</span>
+                    <h2>آخر البطولات</h2>
+                </div>
+
+                <button
+                    class="text-btn"
+                    data-page="history">
+
+                    عرض الكل ←
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="recent-list"
+                id="recentTournaments">
+
+                <div class="empty-state small">
+
+                    <div>🏆</div>
+
+                    <strong>لا توجد بطولات بعد</strong>
+
+                    <span>
+                        أنشئ أول بطولة لك وابدأ المنافسة.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LEAGUE PAGE
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-league">
+
+
+            <div class="page-top">
+
+                <div>
+
+                    <span class="page-kicker">
+                        LEAGUE MODE
+                    </span>
+
+                    <h1>⚽ الدوري</h1>
+
+                    <p>
+                        نظام دوري كامل مع النقاط والترتيب والنتائج.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="newLeagueBtn">
+
+                    ＋ دوري جديد
+
+                </button>
+
+            </div>
+
+
+            <!-- LEAGUE SETUP -->
+
+            <div
+                class="setup-layout"
+                id="leagueSetup">
+
+
+                <div class="panel setup-panel">
+
+                    <div class="panel-title">
+
+                        <div class="panel-title-icon">
+                            ⚽
+                        </div>
+
+                        <div>
+                            <h2>إنشاء دوري جديد</h2>
+                            <p>
+                                أدخل معلومات البطولة والفرق.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <label>
+                        اسم البطولة
+                    </label>
+
+                    <input
+                        id="leagueName"
+                        class="form-input"
+                        placeholder="مثلاً: Brawl League Season 1"
+                        maxlength="60">
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                نظام المباريات
+                            </label>
+
+                            <select
+                                id="leagueFormat"
+                                class="form-input">
+
+                                <option value="single">
+                                    ذهاب فقط
+                                </option>
+
+                                <option value="double">
+                                    ذهاب وإياب
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                نقاط الفوز
+                            </label>
+
+                            <select
+                                id="leagueWinPoints"
+                                class="form-input">
+
+                                <option value="3">
+                                    3 نقاط
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-divider"></div>
+
+
+                    <div class="panel-subtitle">
+
+                        <strong>
+                            إضافة الفرق
+                        </strong>
+
+                        <span id="leagueTeamCounter">
+                            0 فرق
+                        </span>
+
+                    </div>
+
+
+                    <div class="add-team-row">
+
+                        <input
+                            id="leagueTeamInput"
+                            class="form-input"
+                            placeholder="اسم الفريق أو اللاعب"
+                            maxlength="40">
+
+                        <button
+                            class="add-btn"
+                            id="addLeagueTeamBtn">
+
+                            ＋ إضافة
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="team-chips"
+                        id="leagueTeamList">
+
+                    </div>
+
+
+                    <button
+                        class="primary-btn full-btn"
+                        id="startLeagueBtn">
+
+                        🚀 إنشاء وبدء الدوري
+
+                    </button>
+
+                </div>
+
+
+                <div class="panel info-panel">
+
+                    <div class="info-icon">
+                        💡
+                    </div>
+
+                    <h3>كيف يعمل الدوري؟</h3>
+
+                    <ul>
+
+                        <li>
+                            أضف فريقين أو أكثر.
+                        </li>
+
+                        <li>
+                            اختر ذهاب فقط أو ذهاب وإياب.
+                        </li>
+
+                        <li>
+                            سجل نتيجة كل مباراة.
+                        </li>
+
+                        <li>
+                            يتم حساب النقاط والترتيب تلقائياً.
+                        </li>
+
+                    </ul>
+
+                    <div class="points-box">
+
+                        <div>
+                            <span class="win-dot"></span>
+                            فوز
+                            <strong>3</strong>
+                        </div>
+
+                        <div>
+                            <span class="draw-dot"></span>
+                            تعادل
+                            <strong>1</strong>
+                        </div>
+
+                        <div>
+                            <span class="loss-dot"></span>
+                            خسارة
+                            <strong>0</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEAGUE BOARD -->
+
+            <div
+                id="leagueBoard"
+                class="hidden">
+
+
+                <div class="competition-header">
+
+                    <div>
+
+                        <span class="competition-type">
+                            LEAGUE
+                        </span>
+
+                        <h2 id="leagueBoardTitle">
+                            الدوري
+                        </h2>
+
+                        <p id="leagueProgress">
+                            0 مباراة مكتملة
+                        </p>
+
+                    </div>
+
+
+                    <div class="competition-actions">
+
+                        <button
+                            class="secondary-btn"
+                            id="leagueResetBtn">
+
+                            ↻ إعادة إنشاء
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-stats compact">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            🎮
+                        </div>
+
+                        <div>
+                            <span>المباريات</span>
+                            <strong id="leagueMatchCount">0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            ✓
+                        </div>
+
+                        <div>
+                            <span>مكتملة</span>
+                            <strong id="leaguePlayedCount">0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon yellow">
+                            👑
+                        </div>
+
+                        <div>
+                            <span>المتصدر</span>
+                            <strong id="leagueLeader">—</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-tabs">
+
+                    <button
+                        class="content-tab active"
+                        data-league-tab="matches">
+
+                        🎮 المباريات
+
+                    </button>
+
+                    <button
+                        class="content-tab"
+                        data-league-tab="table">
+
+                        📊 الترتيب
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="league-tab-content active"
+                    id="leagueMatchesTab">
+
+                    <div
+                        class="round-list"
+                        id="leagueRounds">
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="league-tab-content"
+                    id="leagueTableTab">
+
+                    <div class="panel table-panel">
+
+                        <div class="table-scroll">
+
+                            <table class="standings-table">
+
+                                <thead>
+
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الفريق</th>
+                                        <th>ل</th>
+                                        <th>ف</th>
+                                        <th>ت</th>
+                                        <th>خ</th>
+                                        <th>له</th>
+                                        <th>عليه</th>
+                                        <th>فارق</th>
+                                        <th>ن</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="leagueTableBody">
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GROUPS PAGE
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-groups">
+
+
+            <div class="page-top">
+
+                <div>
+
+                    <span class="page-kicker">
+                        GROUP STAGE
+                    </span>
+
+                    <h1>👥 دوري المجموعات</h1>
+
+                    <p>
+                        قرعة عشوائية ومجموعات وترتيب وتأهل.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- GROUP SETUP -->
+
+            <div
+                class="setup-layout"
+                id="groupsSetup">
+
+
+                <div class="panel setup-panel">
+
+                    <div class="panel-title">
+
+                        <div class="panel-title-icon gold">
+                            👥
+                        </div>
+
+                        <div>
+                            <h2>إنشاء دوري المجموعات</h2>
+                            <p>
+                                جهّز الفرق ثم اسحب القرعة.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <label>
+                        اسم البطولة
+                    </label>
+
+                    <input
+                        id="groupsName"
+                        class="form-input"
+                        placeholder="مثلاً: Brawl Champions"
+                        maxlength="60">
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                عدد المجموعات
+                            </label>
+
+                            <select
+                                id="groupCount"
+                                class="form-input">
+
+                                <option value="2">2 مجموعات</option>
+                                <option value="4">4 مجموعات</option>
+                                <option value="8">8 مجموعات</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                عدد المتأهلين
+                            </label>
+
+                            <select
+                                id="qualifiersPerGroup"
+                                class="form-input">
+
+                                <option value="1">
+                                    الأول فقط
+                                </option>
+
+                                <option value="2" selected>
+                                    أول فريقين
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-divider"></div>
+
+
+                    <div class="panel-subtitle">
+
+                        <strong>
+                            الفرق المشاركة
+                        </strong>
+
+                        <span id="groupsTeamCounter">
+                            0 فرق
+                        </span>
+
+                    </div>
+
+
+                    <div class="add-team-row">
+
+                        <input
+                            id="groupTeamInput"
+                            class="form-input"
+                            placeholder="اسم الفريق أو اللاعب"
+                            maxlength="40">
+
+                        <button
+                            class="add-btn"
+                            id="addGroupTeamBtn">
+
+                            ＋ إضافة
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="team-chips"
+                        id="groupTeamList">
+
+                    </div>
+
+
+                    <div class="requirement-box">
+
+                        <span>ℹ️</span>
+
+                        <div>
+                            <strong>التوزيع المتوازن</strong>
+
+                            <p id="groupRequirement">
+                                أضف الفرق حتى يصبح العدد مناسباً للمجموعات.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="primary-btn full-btn"
+                        id="drawGroupsBtn">
+
+                        🎲 إجراء القرعة
+
+                    </button>
+
+                </div>
+
+
+                <div class="panel info-panel">
+
+                    <div class="info-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        نظام قريب من البطولات الأوروبية
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            يتم خلط الفرق عشوائياً.
+                        </li>
+
+                        <li>
+                            يتم توزيعها بالتساوي على المجموعات.
+                        </li>
+
+                        <li>
+                            لكل مجموعة جدول ومباريات خاصة بها.
+                        </li>
+
+                        <li>
+                            يمكن نقل المتأهلين للأدوار الإقصائية.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- GROUP BOARD -->
+
+            <div
+                id="groupsBoard"
+                class="hidden">
+
+
+                <div class="competition-header">
+
+                    <div>
+
+                        <span class="competition-type">
+                            GROUP STAGE
+                        </span>
+
+                        <h2 id="groupsBoardTitle">
+                            دوري المجموعات
+                        </h2>
+
+                        <p id="groupsProgress">
+                            القرعة جاهزة
+                        </p>
+
+                    </div>
+
+
+                    <div class="competition-actions">
+
+                        <button
+                            class="secondary-btn"
+                            id="groupsRedrawBtn">
+
+                            🎲 إعادة القرعة
+
+                        </button>
+
+                        <button
+                            class="primary-btn"
+                            id="groupsKnockoutBtn">
+
+                            ⚔️ الأدوار الإقصائية
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="groups-grid"
+                    id="groupsContainer">
+
+                </div>
+
+
+                <div
+                    class="qualified-panel hidden"
+                    id="qualifiedPanel">
+
+                    <div class="qualified-title">
+
+                        <span>🏆</span>
+
+                        <div>
+                            <strong>المتأهلون</strong>
+                            <small>
+                                الفرق المتأهلة من المجموعات
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="qualified-list"
+                        id="qualifiedList">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             KNOCKOUT PAGE
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-knockout">
+
+
+            <div class="page-top">
+
+                <div>
+
+                    <span class="page-kicker">
+                        KNOCKOUT STAGE
+                    </span>
+
+                    <h1>⚔️ الأدوار الإقصائية</h1>
+
+                    <p>
+                        خروج المغلوب من القرعة إلى النهائي.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- KNOCKOUT SETUP -->
+
+            <div
+                class="setup-layout"
+                id="knockoutSetup">
+
+
+                <div class="panel setup-panel">
+
+                    <div class="panel-title">
+
+                        <div class="panel-title-icon blue">
+                            ⚔️
+                        </div>
+
+                        <div>
+                            <h2>إنشاء الأدوار الإقصائية</h2>
+                            <p>
+                                أضف الفرق ثم نفّذ القرعة.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <label>
+                        اسم البطولة
+                    </label>
+
+                    <input
+                        id="knockoutName"
+                        class="form-input"
+                        placeholder="مثلاً: Brawl Cup"
+                        maxlength="60">
+
+
+                    <div class="form-divider"></div>
+
+
+                    <div class="panel-subtitle">
+
+                        <strong>
+                            الفرق
+                        </strong>
+
+                        <span id="knockoutTeamCounter">
+                            0 فرق
+                        </span>
+
+                    </div>
+
+
+                    <div class="add-team-row">
+
+                        <input
+                            id="knockoutTeamInput"
+                            class="form-input"
+                            placeholder="اسم الفريق أو اللاعب"
+                            maxlength="40">
+
+                        <button
+                            class="add-btn"
+                            id="addKnockoutTeamBtn">
+
+                            ＋ إضافة
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="team-chips"
+                        id="knockoutTeamList">
+
+                    </div>
+
+
+                    <div class="bracket-size">
+
+                        <div class="size-option">
+                            <span>2</span>
+                            <small>Final</small>
+                        </div>
+
+                        <div class="size-option">
+                            <span>4</span>
+                            <small>Semifinal</small>
+                        </div>
+
+                        <div class="size-option">
+                            <span>8</span>
+                            <small>Quarter</small>
+                        </div>
+
+                        <div class="size-option">
+                            <span>16</span>
+                            <small>Round 16</small>
+                        </div>
+
+                        <div class="size-option">
+                            <span>32</span>
+                            <small>Round 32</small>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="primary-btn full-btn"
+                        id="drawKnockoutBtn">
+
+                        🎲 إجراء القرعة
+
+                    </button>
+
+                </div>
+
+
+                <div class="panel info-panel">
+
+                    <div class="info-icon">
+                        ⚔️
+                    </div>
+
+                    <h3>
+                        نظام خروج المغلوب
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            يجب أن يكون عدد الفرق قوة للعدد 2.
+                        </li>
+
+                        <li>
+                            2، 4، 8، 16 أو 32 فريق.
+                        </li>
+
+                        <li>
+                            اختر الفائز من كل مباراة.
+                        </li>
+
+                        <li>
+                            المتأهلون ينتقلون تلقائياً.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- KNOCKOUT BOARD -->
+
+            <div
+                id="knockoutBoard"
+                class="hidden">
+
+
+                <div class="competition-header">
+
+                    <div>
+
+                        <span class="competition-type">
+                            KNOCKOUT
+                        </span>
+
+                        <h2 id="knockoutBoardTitle">
+                            الأدوار الإقصائية
+                        </h2>
+
+                        <p id="knockoutProgress">
+                            القرعة جاهزة
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="secondary-btn"
+                        id="knockoutRedrawBtn">
+
+                        🎲 إعادة القرعة
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="bracket-container"
+                    id="knockoutBracket">
+
+                </div>
+
+
+                <div
+                    class="champion-card hidden"
+                    id="championCard">
+
+                    <div class="champion-rays"></div>
+
+                    <div class="champion-cup">
+                        🏆
+                    </div>
+
+                    <span>CHAMPION</span>
+
+                    <h2 id="championName">
+                        —
+                    </h2>
+
+                    <p>
+                        تهانينا للبطل!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TEAMS PAGE
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-teams">
+
+
+            <div class="page-top">
+
+                <div>
+
+                    <span class="page-kicker">
+                        TEAM MANAGER
+                    </span>
+
+                    <h1>👥 الفرق</h1>
+
+                    <p>
+                        أنشئ قائمة فرقك واستخدمها في أي بطولة.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel teams-manager">
+
+                <div class="team-manager-head">
+
+                    <div>
+                        <h2>قائمة الفرق</h2>
+                        <span id="globalTeamCount">
+                            0 فريق
+                        </span>
+                    </div>
+
+                    <button
+                        class="primary-btn"
+                        id="quickAddTeamBtn">
+
+                        ＋ إضافة فريق
+
+                    </button>
+
+                </div>
+
+
+                <div class="global-add-row">
+
+                    <input
+                        id="globalTeamInput"
+                        class="form-input"
+                        placeholder="اسم الفريق أو اللاعب"
+                        maxlength="40">
+
+                    <button
+                        class="add-btn"
+                        id="addGlobalTeamBtn">
+
+                        إضافة
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="global-team-grid"
+                    id="globalTeamList">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HISTORY PAGE
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-history">
+
+
+            <div class="page-top">
+
+                <div>
+
+                    <span class="page-kicker">
+                        HISTORY
+                    </span>
+
+                    <h1>📋 السجل</h1>
+
+                    <p>
+                        البطولات التي أنشأتها مؤخراً.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="history-grid"
+                id="historyList">
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =================================================
+         MOBILE NAV
+    ================================================== -->
+
+    <nav class="mobile-nav">
+
+        <button
+            class="mobile-nav-item active"
+            data-page="dashboard">
+
+            <span>⌂</span>
+            <small>الرئيسية</small>
+
+        </button>
+
+
+        <button
+            class="mobile-nav-item"
+            data-page="league">
+
+            <span>🏆</span>
+            <small>الدوري</small>
+
+        </button>
+
+
+        <button
+            class="mobile-nav-item"
+            data-page="groups">
+
+            <span>👥</span>
+            <small>المجموعات</small>
+
+        </button>
+
+
+        <button
+            class="mobile-nav-item"
+            data-page="knockout">
+
+            <span>⚔️</span>
+            <small>الإقصائي</small>
+
+        </button>
+
+
+        <button
+            class="mobile-nav-item"
+            data-page="teams">
+
+            <span>👤</span>
+            <small>الفرق</small>
+
+        </button>
+
+    </nav>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay hidden"
+    id="modalOverlay">
+
+    <div class="modal" id="modal">
+
+        <button
+            class="modal-close"
+            id="modalClose">
+
+            ×
+
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    class="toast-container"
+    id="toastContainer">
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
